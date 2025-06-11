@@ -1,0 +1,3 @@
+;@bgm Documentary_Movie volume:0.4 loop:true
+@set StartG="true"
+@stop
