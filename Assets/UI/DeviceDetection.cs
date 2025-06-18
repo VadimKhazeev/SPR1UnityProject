@@ -1,17 +1,29 @@
+using System;
 using UnityEngine;
 
 public class DeviceDetection : MonoBehaviour
 {
-    public GameObject mobileUIElement;
-    public GameObject desktopUIElement;
+    [SerializeField]
+    private GameObject mobileUIElement;
+    [SerializeField]
+    private GameObject desktopUIElement;
 
-    private bool isMobile;
+    public Action<ScreenOrientation> OnChoseOrientation;
+
+    [SerializeField]
+    private bool OverrideIsMobile;
+
+    public bool isMobile { get; private set; }
     private ScreenOrientation lastOrientation;
 
     void Start()
     {
         isMobile = Application.isMobilePlatform;
         lastOrientation = Screen.orientation;
+
+#if UNITY_EDITOR
+        isMobile = OverrideIsMobile;
+#endif
 
         // Изначальная проверка ориентации экрана
         UpdateUIBasedOnOrientation();
@@ -29,6 +41,7 @@ public class DeviceDetection : MonoBehaviour
 
     void UpdateUIBasedOnOrientation()
     {
+        OnChoseOrientation?.Invoke(Screen.orientation);
         if (isMobile)
         {
             if (Screen.orientation == ScreenOrientation.LandscapeLeft || Screen.orientation == ScreenOrientation.LandscapeRight || Screen.width > Screen.height)

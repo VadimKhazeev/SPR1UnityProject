@@ -5,10 +5,16 @@ using UnityEngine.UI;
 
 public class CardCheckManager : MonoBehaviour
 {
-    public List<ItemSlot> itemSlots; // Список слотов
-    public Button checkButton;
-
-    public GameObject objectToDisable; // Объект, отключаемый при правильном ответе
+    [SerializeField]
+    private List<ItemSlot> itemSlots; // Список слотов
+    [SerializeField]
+    private Button checkButton;
+    [SerializeField]
+    private GameObject objectToDisable; // Объект, отключаемый при правильном ответе
+    [SerializeField]
+    private Text ButtonText;
+    [SerializeField]
+    private string ButtonOnEndText;
 
     private void Start()
     {
@@ -32,7 +38,20 @@ public class CardCheckManager : MonoBehaviour
 
         if (allCorrect)
         {
-            objectToDisable.SetActive(false);
+            OnCorrectAnswers();
         }
+    }
+
+    private void OnCorrectAnswers()
+    {
+        ButtonText.text = ButtonOnEndText;
+
+        checkButton.onClick.RemoveListener(CheckAnswers);
+        checkButton.onClick.AddListener(EndGame);
+    }
+
+    private void EndGame()
+    {
+        objectToDisable.SetActive(false);
     }
 }

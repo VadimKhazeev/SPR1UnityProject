@@ -15,17 +15,13 @@ public class MiniGameController : MonoBehaviour
 
     void Start()
     {
-        // ѕровер€ем, что количество переменных соответствует количеству UI элементов
         if (miniGameUIs.Count != customVariableNames.Count)
         {
             Debug.LogError(" оличество UI элементов и переменных не совпадает.");
             return;
         }
-
-        // ѕолучаем сервис дл€ работы с переменными
         variableManager = Engine.GetService<ICustomVariableManager>();
 
-        // »нициализируем список предыдущих значений переменных
         previousVariableValues = new List<string>();
 
         // ƒл€ каждой переменной провер€ем начальное состо€ние
@@ -39,12 +35,10 @@ public class MiniGameController : MonoBehaviour
 
     void Update()
     {
-        // ƒл€ каждой переменной провер€ем текущее состо€ние и обновл€ем, если оно изменилось
         for (int i = 0; i < customVariableNames.Count; i++)
         {
             string currentVariableValue = variableManager.GetVariableValue(customVariableNames[i]);
 
-            // ≈сли значение изменилось, обновл€ем состо€ние соответствующей мини-игры
             if (currentVariableValue != previousVariableValues[i])
             {
                 CheckMiniGameState(i, currentVariableValue);
@@ -55,22 +49,12 @@ public class MiniGameController : MonoBehaviour
 
     void CheckMiniGameState(int index, string variableValue)
     {
-        // ≈сли переменна€ не инициализирована или равна пустой строке, отключаем соответствующий UI элемент
         if (string.IsNullOrEmpty(variableValue))
         {
             miniGameUIs[index].SetActive(false);
             return;
         }
 
-        // ≈сли переменна€ равна "1", активируем соответствующий UI элемент
-        if (variableValue == "1")
-        {
-            miniGameUIs[index].SetActive(true);
-        }
-        // ≈сли переменна€ равна "0", деактивируем соответствующий UI элемент
-        else if (variableValue == "0")
-        {
-            miniGameUIs[index].SetActive(false);
-        }
+        miniGameUIs[index].SetActive(variableValue == "1");
     }
 }
