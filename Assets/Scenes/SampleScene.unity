@@ -2719,6 +2719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mobileUIElement: {fileID: 1190750893}
   desktopUIElement: {fileID: 1445448655}
+  OverrideIsMobile: 0
 --- !u!114 &1877923442
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -531,6 +531,12 @@ MonoBehaviour:
     - name: MikhailPhone
       pathPrefix: "Characters/\u0412\u044B"
       guid: c266d3641441f0f419f3df6c10a1b1a8
+    - name: Red
+      pathPrefix: "Characters/\u0412\u044B"
+      guid: 11f33a5166e935d41950bd4526a8e807
+    - name: Green
+      pathPrefix: "Characters/\u0412\u044B"
+      guid: aeec12081ff901348a7eb90ac5edec58
   - Id: Unlockables
     Resources: []
   - Id: Movies

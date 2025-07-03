@@ -256,6 +256,8 @@
 @stop
 
 # C6V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @back DmitriyFactoryWorkPlace_Bakground_12
 @char Дмитрий.Talk2
 Дмитрий: О, тендер? Это отличные новости! Какой?
@@ -288,6 +290,8 @@
 # C7
 @AutoSave
 @set Progress=Progress+1
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 Дмитрий: Тогда всех соберу. Интересно, что случилось.
 @hideChars
 ;перемотка времени на час
@@ -352,12 +356,16 @@
 @choice "Почему вы опоздали?" goto:.C8V3 if:C8V3=1
 @stop
 # C8V1
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @back 241_ConferenceRoom_Background
 @char Михаил.Humility
 Михаил: Отлично.
 @goto .C9
 
 # C8V2
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @back 241_ConferenceRoom_Background
 @char Михаил.Smile
 Михаил: Я и не сомневался, что мы получим какой-нибудь шикарный заказ. Только кто этим всем будет заниматься?
@@ -365,6 +373,8 @@
 @goto .C9
 
 # C8V3
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @set C8V3=0
 @back 241_ConferenceRoom_Background
 @char Михаил.Smile
@@ -385,11 +395,15 @@
 @choice "Разделить сомнения Константина" goto:.C9V2
 @stop
 # C9V1
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Этот заказ решает судьбу фабрики. Справимся — отлично. И получим опыт, и приобретем клиентов.
 Вы: А если нет… Вероятно, будем искать новое место работы.
 @goto .C10
 
 # C9V2
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Я тоже сомневаюсь, справимся ли мы. И не сделает ли этот заказ все только хуже. Но выбора уже нет.
 @goto .C10
 
@@ -402,6 +416,8 @@
 @choice "Рассказать, что такое диалог о целях" goto:.C10V2
 @stop
 # C10V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Для каждого сейчас назначим диалог о целях.
 @char Дмитрий.Talk1
 Дмитрий: Диалог о целях?
@@ -409,6 +425,8 @@
 Вы: После встреч создадим план по производству.
 @goto .C11
 # C10V2
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Это индивидуальные встречи. На них мы обсудим цели и задачи каждого из вас, наметим пути решения всех основных проблем.
 Вы: После встреч создадим план по производству.
 @goto .C11
@@ -421,6 +439,8 @@
 @choice "Послезавтра" goto:.C11V2
 @stop
 # C11V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @hideChars
 @char Михаил.Dissatisfaction
 Михаил: Уже? У нас есть задачи на сегодня.
@@ -433,7 +453,8 @@
 @choice "Послезавтра" goto:.C11V2
 @stop
 # C11V2
-
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @char Дмитрий.Talk1
 Дмитрий: Значит, послезавтра. Хорошо. Во сколько?
 @goto .C12
@@ -446,6 +467,8 @@
 @choice "Выберем точное время для каждого" goto:.C13
 @stop
 # C12V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @hideChars
 ;мини кат сцена: несколько изображений. перед нами сидит дмитрий, о чем-то говорит (без текста и его озвучки). потом заходит евгений. оба смущены. потом заходит михаил, его эта ситуация забавляет. в то же время будет озвучен текст от наставника:
 @back 251_DmitriyTalk.RadialBlur time:2
@@ -464,6 +487,8 @@
 # C13
 @set Progress=Progress+1
 @back 241_ConferenceRoom_Background
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @char Дмитрий.Talk1
 Вы: Дмитрий, вы можете в 11?
 @char Дмитрий.Thoughtful1
@@ -475,6 +500,8 @@
 @choice "Тогда лучше в 12.20, нам нужна полная концентрация" goto:.C13V2
 @stop
 # C13V2
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @char Дмитрий.Talk2
 Дмитрий: Как вам удобно.
 @goto .C14
@@ -501,6 +528,8 @@
 @choice "Нам стоит обсудить проблему постоянных опозданий" goto:.C14V2
 @stop
 # C14V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Точно?
 @char Михаил.Happy
 Михаил: Ну конечно. Не волнуйтесь об этом.
@@ -510,6 +539,8 @@
 @goto .C15
 
 # C14V2
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Почему так происходит?
 @char Михаил.Confusion
 Михаил: Вы знаете. Я не могу бросить дело на середине. Поэтому сначала довожу его до конца или до места, где могу остановится, а потом уже переключаюсь на другое.
@@ -524,6 +555,8 @@
 @choice "Напомнить ценности компании" goto:.C14V2V4
 @stop
 # C14V2V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @set C14V2V1=0
 Вы: В этом есть смысл, даже вполне рационально.
 Вы: Но совсем не значит, что вы можете опаздывать.
@@ -545,6 +578,8 @@
 @goto .C14Back
 
 # C14V2V4
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Правильно ли я понимаю, что для вас важнее личный комфорт, чем взаимоуважение среди коллег?
 @char Михаил.Smile
 Михаил: Не совсем так. Для меня важнее результат моей работы.
@@ -606,6 +641,8 @@
 @choice "Поставлю цель по заказу" goto:.C15V2
 @stop
 # C15V1
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Нужно выбрать 2 самых важных критерия. На них мы сосредоточим особое внимание.
 ;сделать так, чтобы в итоге было выбрано два правильных варианта: первый и четвертый. если выбор сразу правильный, то переходим дальше. если нет – игрок продолжает, пока не выберет правильные варианты.
 # C15V1Back
@@ -618,32 +655,44 @@
 
 # C15V1V1
 @set C15V1V1=0
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Определенно да. Это крайне важно. И отвечает нашей миссии.
 @goto .C16 if:C15V1V4=0
 @goto .C15V1Back
 
 # C15V1V2
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @set C15V1V2=0
 Вы: Хотя… они же начнут строить в мае. Нет, что-то другое.
 @goto .C15V1Back
 
 # C15V1V3
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @set C15V1V3=0
 Вы: Заказчик делал акцент на дизайне. Но это не самое важное. Дизайн важен только при удовлетворении других критериев: значит, он второстепенен.
 @goto .C15V1Back
 
 # C15V1V4
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @set C15V1V4=0
 Вы: Да, задержки неприемлемы. Директор особо это подчеркнул.
 @goto .C16 if:C15V1V1=0
 @goto .C15V1Back
 
 # C15V1V5
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @set C15V1V5=0
 Вы: С другой стороны, заказ на 80 миллионов… Думаю, мы можем позволить себе не слишком экономить.
 @goto .C15V1Back
 
 # C15V2
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Просто “произвести 8.000 комбинезонов”? Нет, расставлю для начала приоритеты.
 @choice "Расставлю приоритеты в заказе" goto:.C15V1
 @stop
@@ -763,20 +812,51 @@
 ;мини-игра с пропуском в письме. механика перетаскивания пропущенного куска. после каждого “перетаскивания” варианты ответов внизу обновляются
 
 Вы: Дорогие коллеги! Как вы знаете, послезавтра состоятся встречи, на которых мы обсудим…
-@choice "Цели компании" set:MadinaChoiceOne=1
-@choice "Цели по тендерному заказу для каждого из вас" set:MadinaChoiceOne=2
+@choice "Цели компании" set:MadinaChoiceOne=1 goto:.CRed1
+@choice "Цели по тендерному заказу для каждого из вас" set:MadinaChoiceOne=2 goto:.CGreen1
 @stop
 
+# CGreen1
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
+@goto .AfterCGreenRed1
+# CRed1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
+@goto .AfterCGreenRed1
+
+# AfterCGreenRed1
 Вы: Диалог о целях необходим, чтобы…
-@choice "Эффективно распределить ресурсы и выстроить коммуникацию" set:MadinaChoiceTwo=1
-@choice "Создать ощущение вовлеченности и поддержать корпоративную культуру" set:MadinaChoiceTwo=2
+@choice "Эффективно распределить ресурсы и выстроить коммуникацию" set:MadinaChoiceTwo=1 goto:.CGreen2
+@choice "Создать ощущение вовлеченности и поддержать корпоративную культуру" set:MadinaChoiceTwo=2 goto:.CRed2
 @stop
+# CGreen2
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
+@goto .AfterCGreenRed1
+# CRed2
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
+@goto .AfterCGreenRed2
+
+# AfterCGreenRed2
 
 @set Progress=Progress+1
 Вы: Напомню, что встречи проводятся индивидуально, каждая займет около…
-@choice "Двух часов" set:MadinaChoiceThree=1
-@choice "40-60 минут" set:MadinaChoiceThree=2
+@choice "Двух часов" set:MadinaChoiceThree=1 goto:.CRed3
+@choice "40-60 минут" set:MadinaChoiceThree=2 goto:.CGreen3
 @stop
+
+# CGreen3
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
+@goto .AfterCGreenRed3
+# CRed3
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
+@goto .AfterCGreenRed3
+
+# AfterCGreenRed3
 
 Вы: Настоятельно прошу вас…
 @choice "Заранее определить ваши цели" set:MadinaChoiceFour=1
@@ -869,12 +949,16 @@
 @choice "Что значит “грамотно”?" goto:.C19V2
 @stop
 # C19V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @back 195_DmitriyListen
 Дмитрий: Отлично. Поступим так: сократим перерывы, я усилю наблюдение за рабочим процессом, чтобы никто не отвлекался и не тормозил работу.
 Дмитрий: И мы можем просить желающих оставаться после конца смены. Я знаю, как их убедить.
 ВашиМысли: Это даже немного пугает.
 @goto .C20
 # C19V2
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @back 195_DmitriyListen
 Дмитрий: Последовательно и эффективно. Поступим так: сократим перерывы, я усилю наблюдение за рабочим процессом, чтобы никто не отвлекался и не тормозил работу.
 Дмитрий: И мы можем просить желающих оставаться после конца смены. Я знаю, как их убедить.
@@ -919,11 +1003,15 @@
 @choice "Попросить нанять больше швей" goto:.C20V2
 @stop
 # C20V1
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @char Дмитрий.Talk2
 Дмитрий: Всего швей 50. Если мы целиком загрузим часть из них старыми проектами, свободных останется 26.
 Дмитрий: А для тендерного заказа понадобится минимум 46.
 @goto .C21
 # C20V2
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @char Дмитрий.Question1
 Дмитрий: Я? А с нашим HR что-то случилось?
 Дмитрий: К тому же, сколько человек нужно нанять?
@@ -947,6 +1035,8 @@
 @choice "Никого не нанимайте, увеличим смену для швей" goto:.C21V4 if:C21V4=1
 @stop
 # C21V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @set C21V1=0
 @hideChars
 ;кат-сцена. 20 (или просто много) новых швей заходят (стоят, сидят) в швейный цех. потом злой дмитрий в швейном цеху, печальный директор. может, еще что-нибудь в таком духе. озвучка голосом наставника, самого его нет
@@ -959,6 +1049,8 @@
 @goto .C21Back
 # C21V2
 @set C21V2=0
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @hideChars
 ;кат-сцена. 10 (или не так много) новых швей в цехе. снова злой дмитрий. константин спит на рабочем месте. швея (решительная) с заявлением в руке
 @back 351_Dressmakers10.RadialBlur time:2
@@ -971,12 +1063,16 @@
 Наставник: Хотя заказ и выполнен, многие швеи подали заявление на увольнение.
 @goto .C21Back
 # C21V3
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @back DmitriyFactoryWorkPlace_Bakground_12
 @char Дмитрий.Question1
 Дмитрий: Что вы имеете в виду?
 Вы: Что может облегчить и уменьшить работу швей?
 @goto .C22
 # C21V4
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @set C21V4=0
 @hideChars
 ;кат-сцена. швеи трудятся ночью. несколько швей с заявлениями об уходе. грустный директор
@@ -1022,10 +1118,14 @@
 @stop
 
 # C22V2V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Цель подходящая как общий вектор действий. Но стоит сделать ее более конкретной.
 @goto .C23
 
 # C22V2V2
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Стоит сделать цель более конкретной. Воспользуйтесь критериями SMART.
 @goto .C23
 
@@ -1037,12 +1137,16 @@
 @choice "Необходимо определить еще один срок выполнения" goto:.C23V2
 @stop
 # C23V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @Char Дмитрий.Question1
 Дмитрий: Ладно.
 Вы: Впрочем, не так важно.
 @choice "Необходимо определить еще один срок выполнения" goto:.C23V2
 @stop
 # C23V2
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Нужно определить, за какое время нанять швей.
 @goto .C24
 
@@ -1057,6 +1161,8 @@
 @choice "Нужно установить хотя бы ориентировочный срок" goto:.C24V2
 @stop
 # C24V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @hideChars
 @wait i
 @back 193_DmitriyLook.RadialBlur time:2
@@ -1070,6 +1176,8 @@
 @stop
 
 # C24V2
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @back DmitriyFactoryWorkPlace_Bakground_12
 @char Дмитрий.Talk1
 Дмитрий: Пусть будут две недели.
@@ -1103,12 +1211,16 @@
 @choice "Я поставлю задачу для достижения цели" goto:.BeforeC25V2
 @stop
 # BeforeC25V2
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @char Евгений.Talk1
 Евгений: Может быть, я попробую?
 Вы: Да, конечно!
 ВашиМысли: И зачем я все на себя беру? Дать возможность проявить инициативу, дать возможность проявить инициативу.
 @goto .BeforeC25V1
 # BeforeC25V1
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 Евгений: Мне необходимо найти и выбрать несколько подходящих вариантов, выяснить точную стоимость и срок поставки, сделать заказ.
 Вы: И согласовывайте со мной каждый этап, пожалуйста.
 
@@ -1125,6 +1237,8 @@
 @choice "Сбросить звонок" goto:.C25V3 if:C25V3=1
 @stop
 # C25V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @set C25V1=0
 Вы: Да, слушаю.
 @spawn ShakeCharacter params:Вы,1
@@ -1149,12 +1263,16 @@
 @goto .C25Back
 
 # C25V2
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 Михаил: Ок, понял!
 @hideChars
 Вы: Продолжайте, Евгений.
 @goto .C26
 
 # C25V3
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @set C25V3=0
 @hideChars
 @char Евгений.Embarrassment
@@ -1201,9 +1319,13 @@
 @choice "“Поддерживать связь с Евгением”" goto:.C26V2
 @stop
 # C26V1
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Все эти категории: лаконичный, эстетический — они мало измеримы.
 @goto .C27
 # C26V2
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 Вы: Странное выражение. Как вы будете поддерживать связь?
 @char Михаил.Surprise
 Михаил: Тут нет никаких странностей. Поддерживать связь — значит общаться и держать друг друга в курсе изменений и новостей по заказу.
@@ -1261,6 +1383,8 @@
 @choice "Вы правы, откровенность необходима" goto:.C28V2
 @stop
 # C28V1
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @char Михаил.Talk2
 Михаил: Уверяю вас, что для меня главное — быть честным.
 Вы: Не совсем так. Тогда вы были бы настроены на диалог, пытались бы понять, зачем нужны эти задачи. Но вы игнорируете мои объяснения.
@@ -1274,6 +1398,8 @@
 @goto .C29
 
 # C28V2
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @char Михаил.Surprise
 Михаил: И я о том же. Если все будут беспрекословно подчиняться, ничего хорошего не выйдет.
 Вы: Это правда. Но любые сомнения и несогласия нужно формулировать конструктивно. Не смеяться над работой и уж точно не избегать ее.
@@ -1301,14 +1427,20 @@
 @choice "Сейчас зафиксируем вместе" goto:.C29V3
 @stop
 # C29V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @char Константин.Anxiety1
 Константин: Как скажете.
 @goto .C30
 # C29V2
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @char Константин.Anxiety1
 Константин: Без проблем.
 @goto .C30
 # C29V3
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @char Константин.Anxiety2
 Константин: Хорошо. Цель — обеспечить достаточное количество оборудования.
 Вы: Вы упустили несколько деталей, потеряли конкретику и ограничение по времени. За месяц обеспечить достаточное для выполнения заказа количество оборудования в исправном состоянии.
@@ -1382,6 +1514,8 @@
 @choice "Собрать обратную связь" goto:.C30V2
 @stop
 # C30V1
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @hideChars
 @char Михаил.Talk1
 Михаил: В каком формате? И зачем?
@@ -1390,6 +1524,8 @@
 @goto .C31
 
 # C30V2
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @hideChars
 @char Михаил.Dontknow
 Михаил: И все?
@@ -1480,11 +1616,15 @@
 @choice "Когда возникнет необходимость" goto:.C32V2
 @stop
 # C32V1
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @char Директор.Talk2
 Директор: Да. Попробуем ежеквартально. Если окажется, что это слишком часто – перейдем на встречи раз в полгода или в год.
 @goto .C33
 
 # C32V2
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @char Директор.Focused
 Директор: Сейчас мы поступили именно так. Провели диалог, потому что он был нам нужен.
 Директор: Но теперь нам стоит определиться с регулярностью.
@@ -1499,12 +1639,16 @@
 @choice "SMART" goto:.C33V2
 @stop
 # C33V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @char Директор.Talk2
 Директор: Думаю, мы пока не готовы к полноценному внедрению OKR. Это потребует серьезных вложений: переоценки работы сотрудников, изучения, объяснения. К тому же, OKR надо вводить сразу на всех уровнях компании.
 Директор: Но вы правы, что это действительно эффективная и интересная система постановки целей. Отметим ее себе на перспективу.
 @choice "SMART" goto:.C33V2
 @stop
 # C33V2
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @char Директор.Focused
 Директор: Согласен. Стоит расшифровать: конкретная, измеримая, достижимая, актуальная, ограниченная по времени цель.
 @goto .C34
@@ -1517,11 +1661,15 @@
 @choice "Сотрудник должен быть вовлечен и инициативен" goto:.C34V2
 @stop
 # C34V1
+@char Вы.Red time:1 pos:,,2
+@char Вы visible:false time:1
 @char Директор.Displeased
 Директор: Не думаю. Если сотрудник делится сомнениями и переживаниями, то лучше прислушаться к нему. Мотивация тоже может быть важной частью диалога о целях.
 Директор: А также вы можете обсудить стратегию и ценности нашей фабрики.
 @choice "Сотрудник должен быть вовлечен и инициативен" goto:.C34V2
 # C34V2
+@char Вы.Green time:1 pos:,,2
+@char Вы visible:false time:1
 @char Директор.Talk1
 Директор: Точно! Но и руководитель, то есть вы, тоже. Укажите это.
 @goto .C35

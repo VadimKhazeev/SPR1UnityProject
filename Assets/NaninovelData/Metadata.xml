@@ -93,6 +93,8 @@
         &lt;Appearances&gt;
           &lt;string&gt;DirectorPhone&lt;/string&gt;
           &lt;string&gt;MikhailPhone&lt;/string&gt;
+          &lt;string&gt;Red&lt;/string&gt;
+          &lt;string&gt;Green&lt;/string&gt;
         &lt;/Appearances&gt;
         &lt;Description /&gt;
       &lt;/Actor&gt;
@@ -874,6 +876,14 @@
       &lt;/Resource&gt;
       &lt;Resource&gt;
         &lt;Path&gt;MikhailPhone&lt;/Path&gt;
+        &lt;Type&gt;Characters/Вы&lt;/Type&gt;
+      &lt;/Resource&gt;
+      &lt;Resource&gt;
+        &lt;Path&gt;Red&lt;/Path&gt;
+        &lt;Type&gt;Characters/Вы&lt;/Type&gt;
+      &lt;/Resource&gt;
+      &lt;Resource&gt;
+        &lt;Path&gt;Green&lt;/Path&gt;
         &lt;Type&gt;Characters/Вы&lt;/Type&gt;
       &lt;/Resource&gt;
       &lt;Resource&gt;

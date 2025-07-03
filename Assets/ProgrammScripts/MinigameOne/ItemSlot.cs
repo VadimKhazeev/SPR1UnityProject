@@ -15,8 +15,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
     private UnityEngine.UI.Outline Highlighter;
 
-    private Color HighlightedColor = new Color(254f, 146f, 4f); // Захардкодил на время
-    private Color BasicOutlineColor = new Color(66f, 66f, 66f);
+    private Color HighlightedColor = new Color(0.9960784f, 0.572549f, 0.01568628f); // Захардкодил на время
+    private Color BasicOutlineColor = new Color(0.2588235f, 0.2588235f, 0.2588235f);
 
     private bool isCorrect;
 
