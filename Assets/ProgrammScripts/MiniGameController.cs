@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class MiniGameController : MonoBehaviour
 {
-    public List<GameObject> miniGameUIs;
+    [SerializeField]
+    private DeviceDetection Detector;
+
+    public GameObject[] miniGameUIs;
+    public GameObject[] mobileMiniGameUIs;
 
     public List<string> customVariableNames;
 
@@ -13,7 +17,7 @@ public class MiniGameController : MonoBehaviour
 
     void Start()
     {
-        if (miniGameUIs.Count != customVariableNames.Count)
+        if (miniGameUIs.Length != customVariableNames.Count)
         {
             Debug.LogError("Количество UI элементов и переменных не совпадает.");
             return;
@@ -50,10 +54,16 @@ public class MiniGameController : MonoBehaviour
     {
         if (string.IsNullOrEmpty(variableValue))
         {
-            miniGameUIs[index].SetActive(false);
+            if(Detector.isMobile)
+                mobileMiniGameUIs[index].SetActive(false);
+            else
+                miniGameUIs[index].SetActive(false);
             return;
         }
 
-        miniGameUIs[index].SetActive(variableValue == "1");
+        if (Detector.isMobile)
+            mobileMiniGameUIs[index].SetActive(variableValue == "1");
+        else
+            miniGameUIs[index].SetActive(variableValue == "1");
     }
 }
