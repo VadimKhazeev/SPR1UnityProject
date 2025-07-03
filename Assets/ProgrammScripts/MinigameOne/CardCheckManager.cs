@@ -1,4 +1,4 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class CardCheckManager : MonoBehaviour
 {
     [SerializeField]
-    private List<ItemSlot> itemSlots; // Список слотов
+    private List<ItemSlot> itemSlots;
     [SerializeField]
     private Button checkButton;
     [SerializeField]
-    private GameObject objectToDisable; // Объект, отключаемый при правильном ответе
+    private GameObject objectToDisable;
     [SerializeField]
     private Text ButtonText;
     [SerializeField]
@@ -55,3 +55,5 @@ public class CardCheckManager : MonoBehaviour
         objectToDisable.SetActive(false);
     }
 }
+
+

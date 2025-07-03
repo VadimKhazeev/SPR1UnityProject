@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(UnityEngine.UI.Outline))]
 public class ItemSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
@@ -11,10 +12,18 @@ public class ItemSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     private List<GameObject> correctObjects;
     [SerializeField]
     private List<GameObject> incorrectObjects;
-    [SerializeField]
-    private GameObject Highlighter;
 
-    private bool isCorrect = false; // Проверка правильности ответа
+    private UnityEngine.UI.Outline Highlighter;
+
+    private Color HighlightedColor = new Color(254f, 146f, 4f); // Захардкодил на время
+    private Color BasicOutlineColor = new Color(66f, 66f, 66f);
+
+    private bool isCorrect;
+
+    private void Awake()
+    {
+        Highlighter = GetComponent<UnityEngine.UI.Outline>();
+    }
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -49,7 +58,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
     private void Highlight(bool On)
     {
-        Highlighter.SetActive(On);
+        Highlighter.effectColor = On ? HighlightedColor : BasicOutlineColor;
     }
 
     public bool CheckAnswer()

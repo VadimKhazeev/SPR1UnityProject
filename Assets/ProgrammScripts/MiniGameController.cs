@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class MiniGameController : MonoBehaviour
 {
-    // Список UI элементов для мини-игр
     public List<GameObject> miniGameUIs;
 
-    // Список имен переменных для каждой мини-игры
     public List<string> customVariableNames;
 
     private ICustomVariableManager variableManager;
@@ -20,6 +18,7 @@ public class MiniGameController : MonoBehaviour
             Debug.LogError("Количество UI элементов и переменных не совпадает.");
             return;
         }
+
         variableManager = Engine.GetService<ICustomVariableManager>();
 
         previousVariableValues = new List<string>();
