@@ -3,21 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemSlot : MonoBehaviour, IDropHandler
+[RequireComponent(typeof(UnityEngine.UI.Outline))]
+public class ItemSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public int slotID; // Уникальный идентификатор слота
+    [SerializeField]
+    private int slotID; // Уникальный идентификатор слота
+    [SerializeField]
+    private List<GameObject> correctObjects;
+    [SerializeField]
+    private List<GameObject> incorrectObjects;
 
-    private bool isCorrect = false; // Проверка правильности ответа
+    private UnityEngine.UI.Outline Highlighter;
 
-    // Списки объектов для управления видимостью
-    public List<GameObject> correctObjects;
-    public List<GameObject> incorrectObjects;
+    private Color HighlightedColor = new Color(254f, 146f, 4f); // Захардкодил на время
+    private Color BasicOutlineColor = new Color(66f, 66f, 66f);
+
+    private bool isCorrect;
+
+    private void Awake()
+    {
+        Highlighter = GetComponent<UnityEngine.UI.Outline>();
+    }
 
     public void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
         {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
+            Highlight(false);
 
             AnswerCard answerCard = eventData.pointerDrag.GetComponent<AnswerCard>();
             if (answerCard != null)
@@ -25,6 +38,27 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 isCorrect = answerCard.cardID == slotID;
             }
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (eventData.pointerDrag != null)
+        {
+            Highlight(true);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (eventData.pointerDrag != null)
+        {
+            Highlight(false);
+        }
+    }
+
+    private void Highlight(bool On)
+    {
+        Highlighter.effectColor = On ? HighlightedColor : BasicOutlineColor;
     }
 
     public bool CheckAnswer()
